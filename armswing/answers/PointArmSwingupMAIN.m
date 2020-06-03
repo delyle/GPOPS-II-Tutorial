@@ -22,9 +22,9 @@ PointArmSwingupPlot(GPOPSoutput,5) % Frame rate lower; we're running the animati
 % Add two more inputs, Umax and s, to the function definition.
 
 l = 1;
-g = 10;
-Tmax = 3;
-Umax = 20;
+g = 1; % This scales our problem better
+Tmax = 1.5;
+Umax = 10;
 s = 1; % Smoothing term
 GPOPSoutput = PointArmSwingupWork(g,l,Tmax,Umax,s);
 PointArmSwingupPlot(GPOPSoutput,30)

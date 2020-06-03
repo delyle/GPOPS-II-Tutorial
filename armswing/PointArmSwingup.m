@@ -56,6 +56,7 @@ guess.phase(i).integral = ;               % scalar
 %-------------------------------------------------------------------------%
 
 setup.mesh.maxiterations = 4;
+setup.mesh.maxerror = 1e-6;
 
 %-------------------------------------------------------------------%
 %--------------------------- Problem Setup -------------------------%
@@ -69,7 +70,6 @@ setup.guess                       = guess;
 setup.nlp.solver = 'ipopt';
 setup.nlp.ipoptoptions.maxiterations = 1000;
 setup.derivatives.derivativelevel = 'first';
-
 
 %-------------------------------------------------------------------%
 %------------------- Solve Problem Using GPOPS2 --------------------%

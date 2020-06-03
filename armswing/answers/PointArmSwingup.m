@@ -47,6 +47,7 @@ guess.phase(i).integral = rand;               % scalar
 %-------------------------------------------------------------------------%
 
 setup.mesh.maxiterations = 4;
+setup.mesh.maxerror = 1e-6;
 
 %-------------------------------------------------------------------%
 %--------------------------- Problem Setup -------------------------%
@@ -76,7 +77,7 @@ U = input.phase(1).control;
 auxdata = input.auxdata;
 
 thetadot = X(:,2); % provide derivative
-thetaddot = (U - auxdata.g*sin(X(:,1)))/auxdata.l;
+thetaddot = U - auxdata.g*sin(X(:,1))/auxdata.l;
 
 phaseout.dynamics = [thetadot,thetaddot];
 phaseout.integrand = U.^2;

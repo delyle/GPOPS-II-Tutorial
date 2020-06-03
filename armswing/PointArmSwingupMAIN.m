@@ -13,7 +13,7 @@ l = 1;
 g = 10;
 Tmax = Inf; % Maximum time to run the simulation
 GPOPSoutput = PointArmSwingup(g,l,Tmax);
-PointArmSwingupPlot(GPOPSoutput,10) % Frame rate lower; we're running the animation a little faster
+PointArmSwingupPlot(GPOPSoutput,5) % Frame rate lower; we're running the animation at 6x normal speed
 
 % What happens? Why do you think this occurs?
 
@@ -22,14 +22,14 @@ PointArmSwingupPlot(GPOPSoutput,10) % Frame rate lower; we're running the animat
 % Add two more inputs, Umax and s, to the function definition.
 
 l = 1;
-g = 10;
-Tmax = 3;
+g = 1; % This scales our problem better
+Tmax = 1.5;
 Umax = 10;
-s = 0.1; % Smoothing term
+s = 1; % Smoothing term
 GPOPSoutput = PointArmSwingupWork(g,l,Tmax,Umax,s);
 PointArmSwingupPlot(GPOPSoutput,30)
 
-% use abs(F.*thetadot) as your objective.
+% Next, use abs(F.*thetadot) as your objective.
 % What happens? Does SNOPT or GPOPS converge?
 
 % Why do you think this might be? How can you solve the problem?
